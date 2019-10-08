@@ -38,17 +38,30 @@ public class CohortTest {
      manyStudentCohorts.addStudent(four);
 
     }
+    @Test
+    public void testIfWeCanAddStudent () {
+        assertEquals(0,emptyCohort.getStudents().size());
+        assertNotEquals(3,oneStudentCohort.getStudents().size());
+        assertEquals(1,oneStudentCohort.getStudents().size());
+        assertEquals(3,manyStudentCohorts.getStudents().size());
+    }
 
     @Test
     public void testIfWeGetListOfStudents () {
+       assertEquals("dani",oneStudentCohort.getStudents().get(0).getName());
+        assertNotEquals("bob",oneStudentCohort.getStudents().get(0).getName());
+        assertEquals("sally",manyStudentCohorts.getStudents().get(1).getName());
 
-        assertNotEquals(3,oneStudentCohort.getStudents().size());
-        assertEquals(3,manyStudentCohorts.getStudents().size());
 
     }
 
     @Test
     public void testIfWeGetAverageAndItsCorrect () {
+        //fers way
+//        oneStudentCohort.getStudents().get(0).addGrade(80);
+//        assertEquals(85,oneStudentCohort.getCohortAverage(),0);
+        //my way
+        assertEquals(77.5,oneStudentCohort.getCohortAverage(),0);
 
     }
 
